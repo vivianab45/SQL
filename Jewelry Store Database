@@ -1,0 +1,28 @@
+--create a Jewlery Store Database
+
+CREATE TABLE jewlerystore (productid INTEGER PRIMARY KEY, name TEXT, color TEXT, price INTEGER, quantity INTEGER, sold INTEGER);
+
+INSERT INTO jewlerystore VALUES (001, "ring", "gold", 10, 100, 5);
+INSERT INTO jewlerystore VALUES (002, "bracelet", "gold", 20, 100, 10);
+INSERT INTO jewlerystore VALUES (003, "necklace", "gold", 40, 100, 4);
+INSERT INTO jewlerystore VALUES (004, "earring", "gold", 15, 100, 25);
+
+--display the database ordered by price
+
+SELECT * from jewlerystore
+ORDER by price;
+
+--what is the total amount of items sold?
+
+SELECT SUM(sold) from jewlerystore;
+
+--what is the average price of the pieces?
+
+SELECT AVG(price) "avg piece price"
+from jewlerystore; 
+
+-Which is the most popular piece?
+
+SELECT  name, sold 
+from jewlerystore
+order by sold DESC
